@@ -1,0 +1,68 @@
+[
+  {
+    "name": "company1",
+    "id": 1,
+    "contacts": [
+      {
+        "phone": "84324324",
+        "type": 0
+      },
+      {
+        "phone": "5325235",
+        "type": 1
+      },
+      {
+        "phone": "123213",
+        "type": 0
+      },
+      {
+        "phone": "76868",
+        "type": 1
+      }
+    ]
+  },
+  {
+    "name": "company2",
+    "id": 2,
+    "contacts": [
+      {
+        "phone": "84324324",
+        "type": 0
+      },
+      {
+        "phone": "5325235",
+        "type": 1
+      },
+      {
+        "phone": "123213",
+        "type": 0
+      },
+      {
+        "phone": "76868",
+        "type": 1
+      }
+    ]
+  },
+  {
+    "name": "company3",
+    "id": 3,
+    "contacts": [
+      {
+        "phone": "84324324",
+        "type": 0
+      },
+      {
+        "phone": "5325235",
+        "type": 1
+      },
+      {
+        "phone": "123213",
+        "type": 0
+      },
+      {
+        "phone": "76868",
+        "type": 1
+      }
+    ]
+  }
+]

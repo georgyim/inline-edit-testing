@@ -1,0 +1,72 @@
+<div>
+
+  <div>
+    <h3>Company's Name: {{company?.name}}</h3>
+  </div>
+  <div>
+    <form *ngIf="contactForm" [formGroup]="contactForm">
+      <table *ngIf="dataSource" mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone</th>
+          <td mat-cell *matCellDef="let element" [formGroup]="element">
+
+            <div style="width:200px; height: 100%">
+              <app-inline-edit>
+                <editTemplate>
+                  <div>
+                    {{element.get('phone').value}}
+                  </div>
+                </editTemplate>
+                <simpleTemplate>
+                  <div>
+                    <mat-form-field class="example-full-width">
+                      <input  formControlName="phone" matInput placeholder="Phone" >
+                    </mat-form-field>
+                  </div>
+                </simpleTemplate>
+              </app-inline-edit>
+            </div>
+
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef> Type</th>
+          <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+
+           <div style="width:200px; height: 100%">
+             <app-inline-edit>
+               <editTemplate>
+                 <div>
+                   {{element.get('type').value}}
+                 </div>
+               </editTemplate>
+               <simpleTemplate>
+                 <div>
+                   <mat-form-field>
+                     <mat-label>Type</mat-label>
+                     <mat-select [(value)]="element.type" formControlName="type">
+                       <mat-option *ngFor="let type of types.values" [value]="type.id">
+                         {{type.descr}}
+                       </mat-option>
+                     </mat-select>
+                   </mat-form-field>
+                 </div>
+               </simpleTemplate>
+             </app-inline-edit>
+           </div>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row;  columns: displayedColumns; let i = index"></tr>
+      </table>
+
+    </form>
+  </div>
+
+</div>
+<button mat-raised-button color="primary" (click)="save()">Save</button>
+

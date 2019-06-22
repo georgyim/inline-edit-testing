@@ -1,0 +1,12 @@
+<ng-template #simpleTemplate>
+  <ng-content select="editTemplate"></ng-content>
+</ng-template>
+
+<ng-template #editTemplate>
+  <ng-content select="simpleTemplate"></ng-content>
+  <button (click)="close()">Close</button>
+</ng-template>
+
+
+<ng-container appInlineEdit [editTemplate]="editTemplate" [simpleTemplate]="simpleTemplate"
+              [isEdit]="isEdit"></ng-container>
